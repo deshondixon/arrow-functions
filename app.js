@@ -117,12 +117,11 @@ let sum = (a, b, c, d) => a + b + c + d;
 console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = () =>
-  ({
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3',
-  });
+ let objectLit = () =>({
+     key1: 'value1',
+     key2: 'value2',
+     key3: 'value3',
+   });
 
 
 // TODO: Uncomment the following line of code to see the output in the browser console
@@ -163,21 +162,17 @@ console.log(joe);
 
 
 
-Student.prototype.greeting = function() {
-  return `Hi, my name is ${this.name}`;
-};
+Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
- console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 
 
-Student.courseName = function() {
-  return 'This student is enrolled in Code 301.';
-};
+Student.courseName = () => 'This student is enrolled in Code 301.';
 
 // TODO: Uncomment the following line of code to see the output in the browser console
  console.log(Student.courseName());
@@ -186,9 +181,7 @@ Student.courseName = function() {
 
 // STEP 11
 // How do arrow functions affect constructor functions?
-Student.prototype.scope = function() {
-  console.log(this);
-};
+Student.prototype.scope = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
  joe.scope();
@@ -196,12 +189,12 @@ Student.prototype.scope = function() {
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
- joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
-// 1. What is "this" when joe.scope() is invoked?
+// 1. What is "this" when joe.scope() is invoked? It shows the window and document name and location.
 //
-// 2. What is "this" when joe.scopeArrow() is invoked?
+// 2. What is "this" when joe.scopeArrow() is invoked? We have a similar thing to the joe.scope but this is for the arrow functions.
 //
-// 3. Explain why "this" is different when an arrow function is used.
+// 3. Explain why "this" is different when an arrow function is used. this lets us know that the function does have a this value for itself.
 //
